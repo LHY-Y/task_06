@@ -1,4 +1,4 @@
-class Particle {
+class Drop {
 
     constructor(position) {
     this.acceleration = createVector(0, 0);
