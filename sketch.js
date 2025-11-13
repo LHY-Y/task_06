@@ -10,7 +10,14 @@ function draw() {
 
   let gravity = createVector(0, 0.03);
   system.applyForce(gravity);
-  
+
+  for (let p of system.drops) {
+    if (p.fall()) {
+      let rebound = createVector(0, p.velocity.y*(-1.2));
+      p.applyForce(rebound);
+    }
+  }
+
   system.addDrop();
   system.run();
 }

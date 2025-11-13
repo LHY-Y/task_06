@@ -11,6 +11,10 @@ class Drop {
     this.display();
     }
 
+    fall() {
+    return this.position.y + 6 > height;
+    }
+
     applyForce(force) {
     this.acceleration.add(force);
     }
