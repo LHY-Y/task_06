@@ -9,7 +9,14 @@ function draw() {
   background(51);
 
   let gravity = createVector(0, 0.03);
-  system.applyForce(gravity);
+  system.applyForce(gravity); 
+
+  if (mouseIsPressed) {
+    let wind = p5.Vector.sub(createVector(mouseX, mouseY), width/2, 0);
+    wind.normalize();
+    wind.mult(0.05);
+    system.applyForce(wind);
+  } 
 
   for (let p of system.drops) {
     if (p.fall()) {
