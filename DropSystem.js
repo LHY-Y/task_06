@@ -1,18 +1,18 @@
 class DropSystem {
     constructor(position) {
-        this.origin = position.copy();
         this.drops = [];
     }
 
     addDrop() {
-    this.drops.push(new Drop(this.origin));
+    let start = createVector(random(width), 0);
+    this.drops.push(new Drop(start));
     }
 
     run() {
     for (let i = this.drops.length-1; i >= 0; i--) {
-    let d = this.drops[i];
-    d.run();
-    if (d.isDead()) {
+    let p = this.drops[i];
+    p.run();
+    if (p.isDead()) {
       this.drops.splice(i, 1);
     }
   }       

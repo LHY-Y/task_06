@@ -8,7 +8,7 @@ function setup() {
 function draw() {
   background(51);
 
-  let gravity = createVector(0, 0.05);
+  let gravity = createVector(0, 0.03);
   system.applyForce(gravity);
   
   system.addDrop();

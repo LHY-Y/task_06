@@ -2,7 +2,7 @@ class Drop {
 
     constructor(position) {
     this.acceleration = createVector(0, 0);
-    this.velocity = createVector(random(-1, 1), random(-1, 0));
+    this.velocity = createVector(random(-0.5, 0.5), random(-0.5, 0.5));
     this.position = position.copy();
     this.lifespan = 255;}
 
@@ -18,7 +18,7 @@ class Drop {
     update() {
     this.velocity.add(this.acceleration);
     this.position.add(this.velocity);
-    this.lifespan -= 2;
+    this.lifespan -= 1;
     this.acceleration.set(0, 0);
     }
 
@@ -26,7 +26,7 @@ class Drop {
     stroke(200, this.lifespan);
     strokeWeight(2);
     fill(127, this.lifespan);
-    ellipse(this.position.x, this.position.y, 12, 12);
+    ellipse(this.position.x, this.position.y-6, 2, 6);
     }
 
     isDead() {
