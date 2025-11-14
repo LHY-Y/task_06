@@ -2,7 +2,7 @@ let system;
 
 function setup() {
   createCanvas(720, 400);
-  system = new DropSystem(createVector(width / 2, height/5*2));
+  system = new DropSystem();
 }
 
 function draw() {
